@@ -1,0 +1,1604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+    <w:body>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="title"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:rPr>
+                    <w:b/>
+                </w:rPr>
+                <w:t>Plotting in MATLAB</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>This lecture will cover some of the plotting options in MATLAB. We will continue to use the
+                    Framingham data set from the previous lecture.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[fram = readtable('../frmgham.xls');]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>For simplifying the following plotting exercises, we will just look at the first 100 patients in
+                    the data set.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[fram = head(fram,100);]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="heading"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Plotting data sets</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>There are many different ways to plot data in MATLAB and also several ways to generate these
+                    figures. Let's start by looking at the Age data from our revised Framingham data set.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[age = fram.AGE;]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Now that we have the Age array saved as a variable, there are two ways to plot it:</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t></w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:b/>
+                </w:rPr>
+                <w:t>Option 1:</w:t>
+            </w:r>
+            <w:r>
+                <w:t>Select the variable in the Workspace, go to</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:i/>
+                </w:rPr>
+                <w:t>Plots</w:t>
+            </w:r>
+            <w:r>
+                <w:t>tab, and select one of the plot options, such as 2-D line graph.</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:customXml w:element="image">
+                <w:customXmlPr>
+                    <w:attr w:name="height" w:val="75"/>
+                    <w:attr w:name="width" w:val="739"/>
+                    <w:attr w:name="verticalAlign" w:val="baseline"/>
+                    <w:attr w:name="altText" w:val=""/>
+                    <w:attr w:name="relationshipId" w:val="rId1"/>
+                </w:customXmlPr>
+            </w:customXml>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>MATLAB will then create the plot for you in a new figure window and display the corresponding
+                    plotting command in the Command Window.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t></w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:b/>
+                </w:rPr>
+                <w:t>Option 2:</w:t>
+            </w:r>
+            <w:r>
+                <w:t>Use the</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:rFonts w:cs="monospace"/>
+                </w:rPr>
+                <w:t>plot</w:t>
+            </w:r>
+            <w:r>
+                <w:t>command:</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[plot(age)]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>The figure includes the ages of all 100 patients, with age given on the y-axis and the index on the
+                    x-axis. Clearly we need to add some information to this plot and find a better way to display the
+                    data.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>When viewing the plot in a figure window, we can use the</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:i/>
+                </w:rPr>
+                <w:t>Inser</w:t>
+            </w:r>
+            <w:r>
+                <w:t>t tab to add elements such as axis labels and titles. When you are done adding these features,
+                    there is an option to generate the code for these changes (click
+                </w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:i/>
+                </w:rPr>
+                <w:t>File</w:t>
+            </w:r>
+            <w:r>
+                <w:t>then</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:i/>
+                </w:rPr>
+                <w:t>Generate Code)</w:t>
+            </w:r>
+            <w:r>
+                <w:t>.</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>As we saw, plotting with one variable outputs the index on the x-axis. However, the</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:rFonts w:cs="monospace"/>
+                </w:rPr>
+                <w:t>plot</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:i/>
+                </w:rPr>
+                <w:t></w:t>
+            </w:r>
+            <w:r>
+                <w:t>command is typically used with two variables. Let's plot Age vs. BMI. First store the BMI data in
+                    an array.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[BMI = fram.BMI;]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>In addition to adding this variable, we should include axis labels and a title to our plot. Because
+                    we are using discrete data points, it also makes sense to use a different marker symbol as opposed
+                    to a line.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[plot(age,BMI,'ro')
+xlabel('Age')
+ylabel('BMI')
+title('Patient Age vs BMI')]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <mc:AlternateContent xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+                <mc:Choice Requires="R2018b">
+                    <w:pPr>
+                        <w:pStyle w:val="heading2"/>
+                        <w:jc w:val="left"/>
+                    </w:pPr>
+                </mc:Choice>
+                <mc:Fallback>
+                    <w:pPr>
+                        <w:pStyle w:val="heading"/>
+                        <w:jc w:val="left"/>
+                    </w:pPr>
+                </mc:Fallback>
+            </mc:AlternateContent>
+            <w:r>
+                <w:rPr>
+                    <w:b/>
+                </w:rPr>
+                <w:t>Log-Log</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>The</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:rFonts w:cs="monospace"/>
+                </w:rPr>
+                <w:t>loglog</w:t>
+            </w:r>
+            <w:r>
+                <w:t>function simply generates a plot with a log scale on both axes. This may not necessarily be a
+                    useful tool for the variables in the Framingham data set, but let's try it on the Glucose data as an
+                    example.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[loglog(fram.GLUCOSE,'o')
+grid on]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <mc:AlternateContent xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+                <mc:Choice Requires="R2018b">
+                    <w:pPr>
+                        <w:pStyle w:val="heading2"/>
+                        <w:jc w:val="left"/>
+                    </w:pPr>
+                </mc:Choice>
+                <mc:Fallback>
+                    <w:pPr>
+                        <w:pStyle w:val="heading"/>
+                        <w:jc w:val="left"/>
+                    </w:pPr>
+                </mc:Fallback>
+            </mc:AlternateContent>
+            <w:r>
+                <w:rPr>
+                    <w:b/>
+                </w:rPr>
+                <w:t>Bar Graphs</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Bar graphs are useful for comparing data from different groups.</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Let's start with a simple example: use the</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:rFonts w:cs="monospace"/>
+                </w:rPr>
+                <w:t>bar</w:t>
+            </w:r>
+            <w:r>
+                <w:t>command to create a graph showing the age of the first ten patients and another graph showing the
+                    BMI of the same group.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[bar(age(1:10))
+xlabel("Patient")
+ylabel("Age")]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[bar(BMI(1:10))
+xlabel("Patient")
+ylabel("BMI")]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Note that the BMI for Patient 2 is missing.</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>For a more complicated example, create a bar graph that looks at gender versus average cigarettes
+                    smoked per day. First, we must create our bar graph categories and specify the order in which they
+                    will display:
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[sex = categorical({'male','female'});
+sex = reordercats(sex,{'male','female'})]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Next, extract the cigarettes per day data for each gender and find the mean values. In the
+                    Framingham data set, males are represented by a 1 and females by a 2. Also, note that we must
+                    convert from a table to an array in order to use the
+                </w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:i/>
+                </w:rPr>
+                <w:t>mean</w:t>
+            </w:r>
+            <w:r>
+                <w:t>function.</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[male_cigs = table2array(fram(fram.SEX == 1,'CIGPDAY'));
+female_cigs = table2array(fram(fram.SEX == 2,'CIGPDAY'));
+
+mean_male_cigs = mean(male_cigs);
+mean_female_cigs = mean(female_cigs);
+mean_cigs = [mean_male_cigs,mean_female_cigs]]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Finally, create the bar graph with the</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:i/>
+                </w:rPr>
+                <w:t>bar</w:t>
+            </w:r>
+            <w:r>
+                <w:t>command. Let's make the bars blue and the bar width set to half of the available space.</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[bar(sex,mean_cigs,0.5,'blue')
+xlabel('Gender');
+ylabel('Average Cigarettes Smoked Per Day');
+title('Gender vs. Smoking Habits')]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <mc:AlternateContent xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+                <mc:Choice Requires="R2018b">
+                    <w:pPr>
+                        <w:pStyle w:val="heading2"/>
+                        <w:jc w:val="left"/>
+                    </w:pPr>
+                </mc:Choice>
+                <mc:Fallback>
+                    <w:pPr>
+                        <w:pStyle w:val="heading"/>
+                        <w:jc w:val="left"/>
+                    </w:pPr>
+                </mc:Fallback>
+            </mc:AlternateContent>
+            <w:r>
+                <w:rPr>
+                    <w:b/>
+                </w:rPr>
+                <w:t>Pie Chart</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Pie charts are useful for looking at the composition of a group.</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Let's create a pie chart which shows the gender distribution of the first 20 patients. The first
+                    step is to create an array which contains the quantity of each gender using the
+                </w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:rFonts w:cs="monospace"/>
+                </w:rPr>
+                <w:t>sum</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:i/>
+                </w:rPr>
+                <w:t></w:t>
+            </w:r>
+            <w:r>
+                <w:t>function.</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[gender_count = [sum(fram.SEX(1:20) == 1),sum(fram.SEX(1:20) == 2)]]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>The</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:rFonts w:cs="monospace"/>
+                </w:rPr>
+                <w:t>pie</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:i/>
+                </w:rPr>
+                <w:t></w:t>
+            </w:r>
+            <w:r>
+                <w:t>function can then be used to display the elements of this matrix as a pie chart.</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[pie(gender_count)
+legend({'Males','Females'})
+title('Gender Distribution')]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Now we will make a pie chart which shows the education levels (1 to 4) for all 100 patients. Again,
+                    the first step is extracting these four values and putting them into an array. We will use a for
+                    loop to create this array.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[for i=1:4
+    education_count(i)=sum(fram.educ==i);
+end
+education_count]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>We need to make sure that the sum of our array elements is equal to 100, as we want to make sure
+                    the entire patient group is represented in the pie chart
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[sum(education_count)]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>We know that the Framingham data set contains some missing values. Confirm that this is the case
+                    with our education data.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[nan = sum(isnan(fram.educ))]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>As expected, we are missing six data points, which would bring the total to 100. Add the missing
+                    data count to the education array so that it is incorported into the pie chart.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[education_count(5) = nan;
+education_count]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>We are finally ready to make the pie chart.</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[labels = {'1', '2', '3', '4','No Data'}
+pie(education_count)
+legend(labels)
+title('Framingham Education Levels')]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <mc:AlternateContent xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+                <mc:Choice Requires="R2018b">
+                    <w:pPr>
+                        <w:pStyle w:val="heading2"/>
+                        <w:jc w:val="left"/>
+                    </w:pPr>
+                </mc:Choice>
+                <mc:Fallback>
+                    <w:pPr>
+                        <w:pStyle w:val="heading"/>
+                        <w:jc w:val="left"/>
+                    </w:pPr>
+                </mc:Fallback>
+            </mc:AlternateContent>
+            <w:r>
+                <w:rPr>
+                    <w:b/>
+                </w:rPr>
+                <w:t>Histograms</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Histograms are used to look at the distribution of continuous data. The data set is displayed as a
+                    series of bins, which we can adjust to our preferences.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Use the</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:rFonts w:cs="monospace"/>
+                </w:rPr>
+                <w:t>histogram</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:i/>
+                </w:rPr>
+                <w:t></w:t>
+            </w:r>
+            <w:r>
+                <w:t>command to look at the distribution of age in the 100 patients (we created a 2-D line plot of this
+                    data earlier in the lesson).
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[histogram(age)
+xlabel("Age")
+ylabel("Frequency")]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>The histogram plot is much more informative and easier to read than our original 2-D line plot from
+                    earlier in the lesson. We can easily see which ages are more common and determine if the
+                    distribution is fairly normal.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Next, create a histogram showing the heart rate distribution and assign it to a variable,</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:i/>
+                </w:rPr>
+                <w:t>HR_histogram</w:t>
+            </w:r>
+            <w:r>
+                <w:t>.</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[HR_histogram = histogram(fram.HEARTRTE);
+xlabel('Heart Rate, bpm')
+ylabel('Frequency')]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>By assigning the histogram to a variable, we can now use dot notation to adjust the plot
+                    properties. Break down the data into 10 bins (using
+                </w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:rFonts w:cs="monospace"/>
+                </w:rPr>
+                <w:t>.NumBins</w:t>
+            </w:r>
+            <w:r>
+                <w:t>) and change the bin color (using</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:rFonts w:cs="monospace"/>
+                </w:rPr>
+                <w:t>.FaceColor</w:t>
+            </w:r>
+            <w:r>
+                <w:t>).</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[HR_histogram.NumBins = 10;
+HR_histogram.FaceColor = 'cyan';]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Another useful feature of the</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:rFonts w:cs="monospace"/>
+                </w:rPr>
+                <w:t>histogram</w:t>
+            </w:r>
+            <w:r>
+                <w:t>command in MATLAB is the ability to compare two distributions in the same figure. For example, we
+                    can look at the distribution of total cholesterol in males versus females. Create an array
+                    containing the cholesterol data for males and add the code "
+                </w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:rFonts w:cs="monospace"/>
+                </w:rPr>
+                <w:t>hold on"</w:t>
+            </w:r>
+            <w:r>
+                <w:t>afterwards.</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[male_cholesterol = fram.TOTCHOL(fram.SEX==1);
+histogram(male_cholesterol, 10)
+xlabel("Cholesterol")
+ylabel("Frequency")
+hold on]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Now create a histogram for the female cholesterol data. The histogram should be added on top of the
+                    previous plot
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[female_cholesterol = fram.TOTCHOL(fram.SEX == 2);
+histogram(female_cholesterol, 10)
+hold off]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <mc:AlternateContent xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+                <mc:Choice Requires="R2018b">
+                    <w:pPr>
+                        <w:pStyle w:val="heading2"/>
+                        <w:jc w:val="left"/>
+                    </w:pPr>
+                </mc:Choice>
+                <mc:Fallback>
+                    <w:pPr>
+                        <w:pStyle w:val="heading"/>
+                        <w:jc w:val="left"/>
+                    </w:pPr>
+                </mc:Fallback>
+            </mc:AlternateContent>
+            <w:r>
+                <w:t>Boxplots</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Boxplots are also helpful for looking at data distribution. In addition to showing the shape of the
+                    distribution, boxplots display the median value, the interquartile range, minimum/maxmimum values,
+                    and outlier points.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Use the</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:rFonts w:cs="monospace"/>
+                </w:rPr>
+                <w:t>boxplot</w:t>
+            </w:r>
+            <w:r>
+                <w:t>command to examine total cholesterol versus sex.</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[boxplot(fram.TOTCHOL,fram.SEX,'Labels',{'Male','Female'})
+xlabel('Gender')
+ylabel('Total Cholesterol')]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>As another example, create a boxplot showing how blood glucose varies between the patients without
+                    diabetes (0) and with diabetes (1).
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[boxplot(fram.GLUCOSE,fram.DIABETES,'Labels',{'Non-Diabetic','Diabetic'})
+xlabel('Diabetes Status')
+ylabel('Blood Glucose Level')]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <mc:AlternateContent xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+                <mc:Choice Requires="R2018b">
+                    <w:pPr>
+                        <w:pStyle w:val="heading2"/>
+                        <w:jc w:val="left"/>
+                    </w:pPr>
+                </mc:Choice>
+                <mc:Fallback>
+                    <w:pPr>
+                        <w:pStyle w:val="heading"/>
+                        <w:jc w:val="left"/>
+                    </w:pPr>
+                </mc:Fallback>
+            </mc:AlternateContent>
+            <w:r>
+                <w:t>Correlation</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>MATLAB has many tools for examining the relationship between variables. Use the</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:rFonts w:cs="monospace"/>
+                </w:rPr>
+                <w:t>lsline</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:i/>
+                </w:rPr>
+                <w:t></w:t>
+            </w:r>
+            <w:r>
+                <w:t>command to plot the least squares regression line for systolic and diastolic blood pressure.</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[scatter(fram.SYSBP,fram.DIABP)
+lsline
+xlabel('Systolic BP, mmHg');
+ylabel('Diastolic BP, mmHg');]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Next, use the</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:rFonts w:cs="monospace"/>
+                </w:rPr>
+                <w:t>corr</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:i/>
+                </w:rPr>
+                <w:t></w:t>
+            </w:r>
+            <w:r>
+                <w:t>function to calculate the correlation coefficient between systolic and diastolic blood pressure.
+                    The correlation coefficient,
+                </w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:i/>
+                </w:rPr>
+                <w:t>r,</w:t>
+            </w:r>
+            <w:r>
+                <w:t>indicates the strength and direction of the relationship between the two variables.</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[r = corr(fram.SYSBP,fram.DIABP)]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>The coefficient of determination,</w:t>
+            </w:r>
+            <w:customXml w:element="equation">
+                <w:customXmlPr>
+                    <w:attr w:name="displayStyle" w:val="false"/>
+                    <w:attr w:name="encoding" w:val="mathml"/>
+                    <w:attr w:name="relationshipId" w:val="rId2"/>
+                </w:customXmlPr>
+                <w:r>
+                    <w:t>r^2</w:t>
+                </w:r>
+            </w:customXml>
+            <w:r>
+                <w:t>, is equal to the correlation coefficient raised to the power of 2:</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[r ^ 2]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>The coefficient of determination measures the amount of variance of one variable that can be
+                    explained by the other. In our example,
+                </w:t>
+            </w:r>
+            <w:customXml w:element="equation">
+                <w:customXmlPr>
+                    <w:attr w:name="displayStyle" w:val="false"/>
+                    <w:attr w:name="encoding" w:val="mathml"/>
+                    <w:attr w:name="relationshipId" w:val="rId2"/>
+                </w:customXmlPr>
+                <w:r>
+                    <w:t>r^2</w:t>
+                </w:r>
+            </w:customXml>
+            <w:r>
+                <w:t>is equal to 0.5519. This means that 55.2% of the variance in the diastolic blood pressure can be
+                    explained by the systolic blood pressure data. This can be used as an indicator for how good of a
+                    fit the least squares regression line is.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>For another example, we will determine the coefficients of correlation and determination between
+                    BMI and blood glucose levels.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Previous work with these variables showed that there is data missing from both the BMI and Glucose
+                    data sets. We must specify for the
+                </w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:rFonts w:cs="monospace"/>
+                </w:rPr>
+                <w:t>corr</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:i/>
+                </w:rPr>
+                <w:t></w:t>
+            </w:r>
+            <w:r>
+                <w:t>function to only use rows that do not have missing values.</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[r_BMI_glucose = corr(fram.BMI,fram.GLUCOSE,"rows","complete")
+r2_BMI_glucose = r_BMI_glucose .^ 2]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>The correlation between these two variables is not nearly as strong as in the previous example with
+                    the systolic and diastolic blood pressures. Create a scatter plot and least-squares line to better
+                    visualize the relationship between BMI and blood glucose levels.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[scatter(fram.BMI, fram.GLUCOSE)
+lsline]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="heading"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Visualizing Distributions</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>The</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:rFonts w:cs="monospace"/>
+                </w:rPr>
+                <w:t>gscatter</w:t>
+            </w:r>
+            <w:r>
+                <w:t>function allows us to plot two variables against each other, such as Glucose and BMI, and then
+                    separate those data points by group. The grouping variable must be in the form of a categorical
+                    variable, such as Diabetes.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Use</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:rFonts w:cs="monospace"/>
+                </w:rPr>
+                <w:t>gscatter</w:t>
+            </w:r>
+            <w:r>
+                <w:t>to plot glucose versus BMI, grouped by diabetes.</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[gscatter(fram.GLUCOSE, fram.BMI, fram.DIABETES)
+xlabel('Glucose')
+ylabel('BMI')
+legend('Non-Diabetic','Diabetic')]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>In this example,</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:rFonts w:cs="monospace"/>
+                </w:rPr>
+                <w:t>gscatter</w:t>
+            </w:r>
+            <w:r>
+                <w:t>makes it easy to see that essentially all of the data points at high glucose levels belong to
+                    patients with diabetes.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Repeat this process with systolic blood pressure versus total cholesterol, grouped by
+                    cardiovascular disease.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[gscatter(fram.SYSBP,fram.TOTCHOL,fram.CVD)
+xlabel('Systolic Blood Pressure')
+ylabel('Total Cholesterol')]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Unlike the last example, there aren't any apparents trends between the data groups. Upon close
+                    inspection, it appears that a slight majority of patients with higher blood pressure also suffered
+                    from CVD. In some cases, we may want to use this tool to help confirm that the data points are
+                    equally distributed throughout the different categories.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="title"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Further Practice</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <mc:AlternateContent xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+                <mc:Choice Requires="R2018b">
+                    <w:pPr>
+                        <w:pStyle w:val="heading2"/>
+                        <w:jc w:val="left"/>
+                    </w:pPr>
+                </mc:Choice>
+                <mc:Fallback>
+                    <w:pPr>
+                        <w:pStyle w:val="heading"/>
+                        <w:jc w:val="left"/>
+                    </w:pPr>
+                </mc:Fallback>
+            </mc:AlternateContent>
+            <w:r>
+                <w:t>Distribution of Blood Glucose Levels</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[histogram(fram.GLUCOSE,15)
+
+title('Distribution of Blood Glucose Levels')
+xlabel('Blood Glucose')
+ylabel('Frequency')]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <mc:AlternateContent xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+                <mc:Choice Requires="R2018b">
+                    <w:pPr>
+                        <w:pStyle w:val="heading2"/>
+                        <w:jc w:val="left"/>
+                    </w:pPr>
+                </mc:Choice>
+                <mc:Fallback>
+                    <w:pPr>
+                        <w:pStyle w:val="heading"/>
+                        <w:jc w:val="left"/>
+                    </w:pPr>
+                </mc:Fallback>
+            </mc:AlternateContent>
+            <w:r>
+                <w:t>Boxplot: Gender versus Heart Rate</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[boxplot(fram.HEARTRTE, fram.SEX,'Labels',{'Male','Female'})
+ylabel('Heart Rate')
+xlabel('Gender')]]></w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:sectPr/>
+            </w:pPr>
+        </w:p>
+        <w:p>
+            <mc:AlternateContent xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+                <mc:Choice Requires="R2018b">
+                    <w:pPr>
+                        <w:pStyle w:val="heading2"/>
+                        <w:jc w:val="left"/>
+                    </w:pPr>
+                </mc:Choice>
+                <mc:Fallback>
+                    <w:pPr>
+                        <w:pStyle w:val="heading"/>
+                        <w:jc w:val="left"/>
+                    </w:pPr>
+                </mc:Fallback>
+            </mc:AlternateContent>
+            <w:r>
+                <w:t>Education vs BMI</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="text"/>
+                <w:jc w:val="left"/>
+            </w:pPr>
+            <w:r>
+                <w:t>What is best way to show this relationship?</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="code"/>
+            </w:pPr>
+            <w:r>
+                <w:t><![CDATA[boxplot(fram.BMI,fram.educ)
+ylabel('BMI')
+xlabel('Education Level')]]></w:t>
+            </w:r>
+        </w:p>
+    </w:body>
+</w:document>
